@@ -1,16 +1,17 @@
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 if __name__ == '__main__':
 	chrome_options = Options()
 	# chrome_options.add_argument('--headless')  # 无头浏览器
-	bro = webdriver.Chrome(executable_path=r'./chromedriver.exe', options=chrome_options)  # 实例化对象
+	bro = webdriver.Chrome(ChromeDriverManager(path="./").install(), options=chrome_options)  # 实例化对象
 	bro.get('http://passport2.chaoxing.com/login?fid=&newversion=true&refer=http%3A%2F%2Fi.chaoxing.com')  # 学习通登录url
 	username_tag = bro.find_element_by_id('phone')
-	username_tag.send_keys('账号')
+	username_tag.send_keys('18812649207')
 	password_tag = bro.find_element_by_id('pwd')
-	password_tag.send_keys('密码')
+	password_tag.send_keys('lzf20001001')
 	btn = bro.find_element_by_id('loginBtn')
 	btn.click()
 	sleep(7)
