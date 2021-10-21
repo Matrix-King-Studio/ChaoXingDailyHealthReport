@@ -9,9 +9,9 @@ if __name__ == '__main__':
 	bro = webdriver.Chrome(ChromeDriverManager(path="./").install(), options=chrome_options)  # 实例化对象
 	bro.get('http://passport2.chaoxing.com/login?fid=&newversion=true&refer=http%3A%2F%2Fi.chaoxing.com')  # 学习通登录url
 	username_tag = bro.find_element_by_id('phone')
-	username_tag.send_keys('18812649207')
+	username_tag.send_keys('你的账号')
 	password_tag = bro.find_element_by_id('pwd')
-	password_tag.send_keys('lzf20001001')
+	password_tag.send_keys('你的密码')
 	btn = bro.find_element_by_id('loginBtn')
 	btn.click()
 	sleep(7)
